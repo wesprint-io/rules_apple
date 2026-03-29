@@ -893,9 +893,11 @@ def ios_application_test_suite(name):
         target_under_test = "//test/starlark_tests/targets_under_test/ios:app_with_app_intents",
         text_test_file = "$BUNDLE_ROOT/Metadata.appintents/extract.actionsdata",
         text_test_values = [
-            ".*HelloWorldIntent.*",
+            ".*\"identifier\":\"HelloWorldIntent\".*",
             ".*IntelIntent.*",
             ".*iOSIntent.*",
+            ".*TestAppShortcuts.*",
+            ".*\"actionIdentifier\":\"HelloWorldIntent\".*",
         ],
         text_file_not_contains = [
             ".*ArmIntent.*",
@@ -911,9 +913,11 @@ def ios_application_test_suite(name):
         target_under_test = "//test/starlark_tests/targets_under_test/ios:app_with_app_intents",
         text_test_file = "$BUNDLE_ROOT/Metadata.appintents/extract.actionsdata",
         text_test_values = [
-            ".*HelloWorldIntent.*",
+            ".*\"identifier\":\"HelloWorldIntent\".*",
             ".*ArmIntent.*",
             ".*iOSIntent.*",
+            ".*TestAppShortcuts.*",
+            ".*\"actionIdentifier\":\"HelloWorldIntent\".*",
         ],
         text_file_not_contains = [
             ".*IntelIntent.*",
